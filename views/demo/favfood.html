@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+#div1,
+#div2 {
+  width: 500px;
+  height: 200px;
+  padding: 100px 0px 0px 0px;
+  border: 0px solid #f00;
+
+}
+.bowl {
+  margin: 15px;
+  width: 500px;
+  height: 300px;
+  padding: 10px;
+  border: 0px solid #aaaaaa;
+  text-align: center;
+  background-image:url(bowl.png)
+}
+.frame {
+   float: left;
+}
+
+.center {
+  margin: 10px;
+  width: 500px;
+  border: 0px solid #73AD21;
+  padding: 10px;
+  text-align: center;
+}
+</style>
+<script>
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+</script>
+</head>
+<body>
+<div style="text-align: center;">
+<img id="drag1" src="fishx.png" draggable="true" ondragstart="drag(event)">
+<img id="drag2" src="bean.png" draggable="true" ondragstart="drag(event)">
+<img id="drag3" src="fishx.png" draggable="true" ondragstart="drag(event)">
+<img id="drag2" src="bean.png" draggable="true" ondragstart="drag(event)">
+<img id="drag4" src="fishx.png" draggable="true" ondragstart="drag(event)">
+<img id="drag5" src="bean.png" draggable="true" ondragstart="drag(event)">
+<img id="drag6" src="fishx.png" draggable="true" ondragstart="drag(event)">
+</div>
+<hr>
+<div class="frame">
+    <div class="center"><h2>美味しい</h2></div>
+    <div class="bowl center">
+        <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    </div>
+</div>
+<div class="frame">
+    <div class="center"><h2>美味しくない</h2></div>
+    <div class="bowl center">
+        <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    </div>
+</div>
+
+
+</body>
+</html>
