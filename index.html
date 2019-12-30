@@ -1,118 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="A simple practice">
-    <meta name="keywords" content="web">
-    <meta name="author" content="Jacy Chu">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Alwin Lee | Websites Exercise</title>
-    <link href="style.css" rel="stylesheet">
-    <link rel="icon" type="image/png" href="./static/img/favicon.png">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            color: #5f5f5f;
-            font-size: 20px;
-            letter-spacing: 2px;
-        }
-        a {
-            color: rosybrown;
-            font-weight: bold;
-        }
-        a:visited {
-            color: indianred;
-        }
-
-        h1 {
-            font-size: 52px;
-            color: sienna;
-            margin: 0;
-            line-height: 1;
-            padding: 0;
-        }
-        .title-line {
-            margin: 15px 0px;
-
-        }
-        #logo {
-            float: right;
-            margin: 12px 12px;
-            height: 33px;
-            width: 29px;
-        }
-
-        #top-container {
-            margin: 20px 30px 50px 30px;
-        }
-
-        .lightsalmon {
-            color: #ffa07a;
-            font-weight: bold;
-            font-size: 36px;
-        }
-
-        #marquee-container {
-            border-top: 1px solid #5f5f5f;
-            border-bottom: 1px solid #5f5f5f;
-            padding: 20px 0 20px 0;
-            margin: 0 30px;
-            text-align: center;
-            font-size: 26px;
-            line-height: 1.6;
-            color:#993300;
-        }
-
-        #exercise {
-            margin: 30px 30px 20px 30px;
-        }
-
-        .exercises{
-            margin: 0 0 20px 0;
-        }
-
-        header {
-            text-align: right;
-            padding:0 20px 5px 0;
-            border-bottom: 1px solid #ccc;
-        }
-
-        nav a {
-            margin-left: 10px;
-            font-weight: normal;
-            color: #5f5f5f;
-            text-decoration: none;
-        }
-    </style>
-</head>
-
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>單字計劃表</title>
+  <style type="text/css">
+  a{text-decoration: none;color:#39f; }
+  body{width: 988px; margin: 0 auto;}
+  th{text-align: right; font-size: 14px; color: #666;width: 100px;}
+  td{font-size: 12px;color: #999;padding: 3px 0;}
+  input{width: 136px;}
+  input[type=checkbox]{width:auto;}
+  h1{text-align: center;}
+  #sidebar{float: left;width: 270px;margin-right: 10px;margin-top: 70px;}
+  #output{width: 707px;font-family: Verdana;float: left;font-size: 12px;}
+  #output>span{
+    width: 100px;
+    float: left;
+    height: 20px;
+    border: 1px solid #aaa;
+    border-left: none;
+    text-align: center;
+  }
+  #output{border-left: 1px solid #aaa;}
+  #calendar>div{
+    width: 97px;
+    height: 114px;
+    float: left;
+    padding-left: 3px;
+    border-right: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+  }
+  @media print{form{display: none;}body{width: 708px;}}
+  </style>
 <body>
-    <header>
-    <nav>
-        <a href="index.html">About</a>
-        <a href="index.html">Contact</a>
-        <a href="https://github.com/alwinlee" target="_blank">Github</a>
-    </nav>
-    </header>
+<form id="sidebar" style="height: auto !important;">
+   <table>
+     <tbody><tr><th>計劃名</th><td><input id="plan" value="單字計劃表"></td></tr>
+     <tr><th>List 名</th><td><input id="book" value="L"></td></tr>
+     <tr><th>開始日期</th><td><input id="startDate" type="date"></td></tr>
+     <tr><th>每天 List 數</th><td><input id="listPerDay" value="2"></td></tr>
+     <tr><th>List 總數</th><td><input id="totalList" value="42"><br></td></tr>
+     <tr><th>是否反向</th><td><input id="reverse" type="checkbox"></td></tr>
+     <tr><th></th><td><button id="generate">點擊這裡生成</button>
+        <button type="button" onclick="javascript:window.print()">列印</button></td></tr>
+     <tr><td colspan="2">註1：本工具根據最新《<a href="http://www.amazon.cn/gp/product/B0011C0ZQ0/ref=as_li_ss_tl?ie=UTF8&amp;camp=536&amp;creative=3132&amp;creativeASIN=B0011C0ZQ0&amp;linkCode=as2&amp;tag=shawphy-23">17天搞定GRE單詞</a>》第二版中，第35頁上的21天時間表，動態生成時間表。時間間隔為1,2,4,7,15天。與網上流傳的老版掃描版略有不同。</td></tr>
+     <tr><td colspan="2">註2：列表中打星號的表示複習。按照原書的建議，上午學習新的list，下午或者晚上複習打星號的list。背完或者複習完就可以劃掉增加成就感。</td></tr>
+     <tr><td colspan="2">註3：本頁面可以直接列印，列印的時候不會有側邊欄。實在無法直接列印就截圖放到word裡列印吧。</td></tr>
+     <tr><td colspan="2">註4：本工具建議使用 <a href="http://www.google.com/intl/zh-CN/chrome/browser/">Chrome流覽器</a> 訪問。IE 10 以下版本不保證正常使用。 </td></tr>
+     <tr><td colspan="2">註5：祝大家考試順利！</td></tr>
+   </tbody></table>
+  <br>
+</form><ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><ins id="aswift_0_anchor" style="display:block;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><iframe frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0px;width:0px;height:0px;" src="./words-plan_files/saved_resource(2).html"></iframe></ins></ins></ins><iframe id="google_osd_static_frame_9541402960709" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;" src="./words-plan_files/saved_resource(3).html"></iframe>
+<h1>單字計劃表</h1>
+<div id="output">
+  <span>Sun</span>
+  <span>Mon</span>
+  <span>Tue</span>
+  <span>Wed</span>
+  <span>Thu</span>
+  <span>Fri</span>
+  <span>Sat</span>
+  <div id="calendar"><div>11/10</div><div>11/11</div><div>11/12</div><div>11/13<br>&nbsp;&nbsp;L 1~2<br>*L 1~2</div><div>11/14<br>&nbsp;&nbsp;L 3~4<br>*L 1~2<br>*L 3~4</div><div>11/15<br>&nbsp;&nbsp;L 5~6<br>*L 3~4<br>*L 5~6</div><div>11/16<br>&nbsp;&nbsp;L 7~8<br>*L 1~2<br>*L 5~6<br>*L 7~8</div><div>11/17<br>&nbsp;&nbsp;L 9~10<br>*L 3~4<br>*L 7~8<br>*L 9~10</div><div>11/18<br>&nbsp;&nbsp;L 11~12<br>*L 5~6<br>*L 9~10<br>*L 11~12</div><div>11/19<br>&nbsp;&nbsp;L 13~14<br>*L 7~8<br>*L 11~12<br>*L 13~14</div><div>11/20<br>&nbsp;&nbsp;L 15~16<br>*L 1~2<br>*L 9~10<br>*L 13~14<br>*L 15~16</div><div>11/21<br>&nbsp;&nbsp;L 17~18<br>*L 3~4<br>*L 11~12<br>*L 15~16<br>*L 17~18</div><div>11/22<br>&nbsp;&nbsp;L 19~20<br>*L 5~6<br>*L 13~14<br>*L 17~18<br>*L 19~20</div><div>11/23<br>&nbsp;&nbsp;L 21~22<br>*L 7~8<br>*L 15~16<br>*L 19~20<br>*L 21~22</div><div>11/24<br>&nbsp;&nbsp;L 23~24<br>*L 9~10<br>*L 17~18<br>*L 21~22<br>*L 23~24</div><div>11/25<br>&nbsp;&nbsp;L 25~26<br>*L 11~12<br>*L 19~20<br>*L 23~24<br>*L 25~26</div><div>11/26<br>&nbsp;&nbsp;L 27~28<br>*L 13~14<br>*L 21~22<br>*L 25~26<br>*L 27~28</div><div>11/27<br>&nbsp;&nbsp;L 29~30<br>*L 1~2<br>*L 15~16<br>*L 23~24<br>*L 27~28<br>*L 29~30</div><div>11/28<br>&nbsp;&nbsp;L 31~32<br>*L 3~4<br>*L 17~18<br>*L 25~26<br>*L 29~30<br>*L 31~32</div><div>11/29<br>&nbsp;&nbsp;L 33~34<br>*L 5~6<br>*L 19~20<br>*L 27~28<br>*L 31~32<br>*L 33~34</div><div>11/30<br>&nbsp;&nbsp;L 35~36<br>*L 7~8<br>*L 21~22<br>*L 29~30<br>*L 33~34<br>*L 35~36</div><div>12/1<br>&nbsp;&nbsp;L 37~38<br>*L 9~10<br>*L 23~24<br>*L 31~32<br>*L 35~36<br>*L 37~38</div><div>12/2<br>&nbsp;&nbsp;L 39~40<br>*L 11~12<br>*L 25~26<br>*L 33~34<br>*L 37~38<br>*L 39~40</div><div>12/3<br>&nbsp;&nbsp;L 41~42<br>*L 13~14<br>*L 27~28<br>*L 35~36<br>*L 39~40<br>*L 41~42</div><div>12/4<br>*L 15~16<br>*L 29~30<br>*L 37~38<br>*L 41~42</div><div>12/5<br>*L 17~18<br>*L 31~32<br>*L 39~40</div><div>12/6<br>*L 19~20<br>*L 33~34<br>*L 41~42</div><div>12/7<br>*L 21~22<br>*L 35~36</div><div>12/8<br>*L 23~24<br>*L 37~38</div><div>12/9<br>*L 25~26<br>*L 39~40</div><div>12/10<br>*L 27~28<br>*L 41~42</div><div>12/11<br>*L 29~30</div><div>12/12<br>*L 1~2<br>*L 31~32</div><div>12/13<br>*L 3~4<br>*L 33~34</div><div>12/14<br>*L 5~6<br>*L 35~36</div><div>12/15<br>*L 7~8<br>*L 37~38</div><div>12/16<br>*L 9~10<br>*L 39~40</div><div>12/17<br>*L 11~12<br>*L 41~42</div><div>12/18<br>*L 13~14</div><div>12/19<br>*L 15~16</div><div>12/20<br>*L 17~18</div><div>12/21<br>*L 19~20</div><div>12/22<br>*L 21~22</div><div>12/23<br>*L 23~24</div><div>12/24<br>*L 25~26</div><div>12/25<br>*L 27~28</div><div>12/26<br>*L 29~30</div><div>12/27<br>*L 31~32</div><div>12/28<br>*L 33~34</div><div>12/29<br>*L 35~36</div><div>12/30<br>*L 37~38</div><div>12/31<br>*L 39~40</div><div>1/1<br>*L 41~42</div></div>
+</div>
+<script src="./static/js/jquery-2.1.4.min.js"></script>
+<script>
+  $("#startDate").val(new Date().toJSON().slice(0,10));
+  $("#generate").click(function() {
+    var book=$("#book").val();
+    var startDate=$("#startDate").val();
+    var listPerDay=$("#listPerDay").val()-0;
+    var totalList=$("#totalList").val()-0;
+    var weekday=new Date(startDate).getDay();
+    var firstLineSunday=new Date(new Date(startDate)-weekday*86400000);
+    var calendar=$("#calendar").empty();
+    var  reverse=$("#reverse").prop("checked");
 
-    <div id="top-container"> <!-- whole document. -->
-        <img id="logo" alt="alwin avatat" src="./static/img/favicon.png">
-        <h1 class="title-line">Good day!</h1>
-        <div class="title-line">I'm Alwin.</div>
-        <div class="lightsalmon title-line">I'm using HTML, CSS and JS to build up a website.</div>
-        <div class="title-line">You can follow the project here and on the <span><a href="index.html" target="_blank">blog</a></span>.</div>
-    </div>
+    $("h1").text($("#plan").val())
+    for (var i = 0,l=totalList/listPerDay+29+weekday; i<l; i++) {
+      currentDay=new Date(firstLineSunday-0+i*86400000);
+      calendar.append("<div>"+(currentDay.getMonth()-0+1)+"/"+currentDay.getDate()+"</div>")
+    };
 
-    <div id="marquee-container">
-        <div>The Latest Website</div>
-        <a href="views/formatting/index.html">Formatring</a>
-    </div>
-
-    <div id="exercise">
-        <div class="exercises"> Exercise4 : <a href="views/formatting/index.html">Formatring</a> </div>
-        <div class="exercises"> Exercise3 : <a href="views/secret/index.html">Secret Message</a> </div>
-        <div class="exercises"> Exercise2 : <a href="views/tables/index.html">Three Tables</a> </div>
-        <div class="exercises"> Exercise1 : <a href="index.html">Homepage</a> </div>
-    </div>
-</body>
-</html>
+    var plan=[];
+    for (var i = 0,l=totalList/listPerDay; i <l; i++) {
+      tmp=[];
+      for (var j = 1; j <= listPerDay; j++) {
+        k=i*listPerDay+j;
+        if (k>totalList) break;
+        tmp.push(k)
+      };
+      if(tmp.length==1){
+        str=tmp[0]
+      } else {
+        str=tmp.shift()+"~"+tmp.pop();
+      }
+      plan.push(str);
+    };
+    for (var i = 0,l=plan.length; i < l; i++) {
+      calendar.children().eq(weekday+i).append("<br>&nbsp;&nbsp;"+book+" "+plan[reverse?l-i-1:i])
+    };
+    var plan=[];
+    for (var i = 0,l=totalList/listPerDay; i <l; i++) {
+      tmp=[];
+      for (var j = 1; j <= listPerDay; j++) {
+        k=i*listPerDay+j;
+        if (k>totalList) break;
+        tmp.push(k)
+      };
+      if(tmp.length==1){
+        str=tmp[0]
+      } else {
+        str=tmp.shift()+"~"+tmp.pop();
+      }
+      plan.push(str);
+    };
+    for (var i = 0,l=plan.length; i < l; i++) {
+      calendar.children().eq(weekday+i).append("<br>*"+book+" "+plan[reverse?l-i-1:i])
+      calendar.children().eq(weekday+i+1).append("<br>*"+book+" "+plan[reverse?l-i-1:i])
+      calendar.children().eq(weekday+i+3).append("<br>*"+book+" "+plan[reverse?l-i-1:i])
+      calendar.children().eq(weekday+i+7).append("<br>*"+book+" "+plan[reverse?l-i-1:i])
+      calendar.children().eq(weekday+i+14).append("<br>*"+book+" "+plan[reverse?l-i-1:i])
+      calendar.children().eq(weekday+i+29).append("<br>*"+book+" "+plan[reverse?l-i-1:i])
+    };
+    return false;
+  }).click()
+</script>
