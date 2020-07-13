@@ -1,39 +1,57 @@
-
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <title>KK</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Web Practice">
+  <meta name="keywords" content="HTML,SCSS,CSS,JS,jQUERY">
+  <meta name="author" content="Alwin">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>KK</title>
+  <link rel="stylesheet" href="./static/css/bootstrap.min.css">
+</head>
+<body style="font-family: Arial;">
+  <div class="container pt-3">
+    <div class="row">
+      <div class="col-md-12">
+        <h3>KK</h3>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        母音
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-sm-12">
+            <button type="button" id="main-1" class="btn btn-outline-primary float-left" style="width: 50px;height: 50px;font-size: 20px;">i</button>
+            <button type="button" id="main-2" class="btn btn-outline-primary float-left" style="width: 50px;height: 50px;font-size: 20px;">ɪ</button>
+            <button type="button" id="main-3" class="btn btn-outline-primary float-left" style="width: 50px;height: 50px;font-size: 20px;margin: 0 0 0 10px;">e</button>
+            <button type="button" class="btn btn-outline-primary float-left" style="width: 50px;height: 50px;font-size: 20px;">ɛ</button>
+            <button type="button" class="btn btn-outline-primary float-left" style="width: 50px;height: 50px;font-size: 20px">æ</button>
+          </div>
+        </div>
 
-    <link href="./static/css/bootstrap.min.css">
-    <!-- Favicons -->
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
+      </div>
+    </div>
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-  </head>
-  <body>
-  <main role="main" class="container">
 
-    <p>AAA</p>
-    <p>BBB</p>
-  </main>
-  <script src="./static/js/jquery-2.1.4.min.js"></script>
+
+  </div>
+
+  <script src="./static/js/jquery.min.js"></script>
+
   <script src="./static/js/bootstrap.min.js"></script>
-  </body>
+</body>
+<script type="text/javascript">
+$(document).ready(function () {
+  $('#main-1').on('click', function () {
+    let snd = new Audio('./static/audio/母音全部-1.mp3');
+    snd.loop = true; //設定循環播放
+    snd.play();
+  });
+
+
+});
+</script>
 </html>
